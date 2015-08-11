@@ -34,7 +34,7 @@ if [ ! -d "~/Repos" ]; then
 fi
 
 # Get common settings
-common = "~Repos/Common-Settings"
+common = "~/Repos/Common-Settings"
 git clone https://github.com/StummeJ/CommonSettings.git $common
 
 # Get oh my zsh
