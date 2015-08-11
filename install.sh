@@ -1,5 +1,5 @@
 #!/bin/zsh
-platform = `uname`
+platform="`uname`"
 
 # Mac specifc bits
 if ["$platform" == "Darwin"]; then
@@ -13,7 +13,7 @@ if ["$platform" == "Darwin"]; then
 				wget http://sourceforge.net/projects/git-osx-installer/files/git-2.5.0-intel-universal-mavericks.dmg -O git-2.5.0.dmg
 			fi
 			hdiutil mount git-2.5.0.dmg
-			git_install = `hdiutil info | grep /Volumes/Git | cut -f 3-`
+			git_install=$(`hdiutil info | grep /Volumes/Git | cut -f 3-`)
 			if [ -d "$git_install" ]; then
 					git_installer = `ls "$git_install/*.pkg"`
 					sudo installer -package $git_install/$git_installer -target "/Volumes/Macintosh HD"
@@ -34,7 +34,7 @@ if [ ! -d "~/Repos" ]; then
 fi
 
 # Get common settings
-common = "~/Repos/Common-Settings"
+common="~/Repos/Common-Settings"
 git clone https://github.com/StummeJ/CommonSettings.git $common
 
 # Get oh my zsh
