@@ -29,6 +29,12 @@ if [[ "$platform" == "Darwin" ]]; then
 	home="~"
 else
 	home="/home/`whoami`"
+	
+	# Install powerline fonts
+	wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+	sudo mv PowerlineSymbols.otf /usr/share/fonts/
+	sudo fc-cache -vf
+	sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 fi
 
 # Make repos dir in user
@@ -53,3 +59,5 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp "$common/.vim" "$home/"
 vim +PluginInstall +qall
 
+# Set zsh as default shell
+chsh -s /bin/zsh

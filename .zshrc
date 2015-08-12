@@ -61,11 +61,11 @@ POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow-avh osx sudo brew encode64)
+plugins=(git git-flow-avh sudo command-not-found debian encode64)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/usr/lib/icecc/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -94,5 +94,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ice="USE_SCHEDULER="isgicecc.jdnet.deere.com" icemon &"
+alias sudo="sudo -E"
+alias ll="ls --color -lah"
 
-source /Users/stummej/.iterm2_shell_integration.zsh
+#Proxy settings
+source ~/.proxyrc
+
+export all_proxy=$proxy_socks
+export ftp_proxy=$proxy
+export http_proxy=$proxy
+export https_proxy=$proxy
