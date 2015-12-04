@@ -13,6 +13,7 @@ Plugin 'xero/sourcerer.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
+Plugin 'suan/vim-instant-markdown'
 
 " Vundle load plugins
 call vundle#end()
@@ -34,6 +35,12 @@ let g:signify_sign_delete_first_line = '‾'
 let g:signify_sign_change            = '~'
 let g:signify_sign_changedelete      = g:signify_sign_change
 
+" Setup instant markdown
+let g:instant_markdown_autostart = 1
+
+" English spell check
+"setlocal spell spelllang=en_us
+
 " Always show statusline
 set laststatus=2
 
@@ -46,6 +53,12 @@ colorscheme PaperColor
  
 " Use powerline font
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline
+
+" Line too long column
+if exists("&colorcolumn")
+  set colorcolumn=96
+  highlight ColorColumn ctermbg=233
+endif
 
 " Enable line numbers
 set number
