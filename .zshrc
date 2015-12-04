@@ -65,7 +65,7 @@ plugins=(git git-flow-avh sudo command-not-found debian encode64)
 
 # User configuration
 
-export PATH="/usr/lib/icecc/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -97,11 +97,14 @@ source $ZSH/oh-my-zsh.sh
 alias ice="USE_SCHEDULER="isgicecc.jdnet.deere.com" icemon &"
 alias sudo="sudo -E"
 alias ll="ls --color -lah"
+alias less="less -R"
+alias ackl="ack-grep --pager='less -R'"
+alias ack="ack-grep"
 
 #Proxy settings
-source ~/.proxyrc
+# source ~/.proxyrc
 
-export all_proxy=$proxy_socks
-export ftp_proxy=$proxy
-export http_proxy=$proxy
-export https_proxy=$proxy
+# export all_proxy=$proxy_socks
+# export ftp_proxy=$proxy
+# export http_proxy=$proxy
+# export https_proxy=$proxy
