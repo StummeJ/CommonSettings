@@ -56,7 +56,7 @@ cp "$common/.zshrc" "$home/"
 
 # Get vim plugins
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp "$common/.vim" "$home/"
+cp -r "$common/.vim" "$home/"
 vim +PluginInstall +qall
 
 # Set zsh as default shell
